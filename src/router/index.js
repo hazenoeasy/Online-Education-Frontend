@@ -56,23 +56,23 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/teacher',
+    name: 'teacher management',
+    meta: { title: 'Teacher Management', icon: 'el-icon-s-help' },
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    // redirect: '/teacher/table',
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'list',
+        name: 'List',
+        component: () => import('@/views/teacher/list'),
+        meta: { title: 'Teacher List', icon: 'el-icon-s-help' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'addTeacher',
+        name: 'AddTeacher',
+        component: () => import('@/views/teacher/add-teacher'),
+        meta: { title: 'Teacher List', icon: 'el-icon-s-help' }
       }
     ]
   },
