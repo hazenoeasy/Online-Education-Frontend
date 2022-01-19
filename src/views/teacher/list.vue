@@ -39,7 +39,7 @@
 
     <!-- 表格 -->
     <el-table
-      v-loading="listLoading"
+
       :data="list"
       border
       fit
@@ -71,6 +71,7 @@
       <el-table-column prop="sort" label="排序" width="60" />
 
       <el-table-column label="操作" width="200" align="center">
+        <!-- scope获得内部数据 scope.row 相当于一个this.data -->
         <template slot-scope="scope">
           <router-link :to="'/teacher/edit/'+scope.row.id">
             <el-button type="primary" size="mini" icon="el-icon-edit">修改</el-button>

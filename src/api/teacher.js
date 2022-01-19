@@ -20,6 +20,26 @@ export default {
       url: 'edu/teacher/delete/' + id,
       method: 'delete'
     })
+  },
+  getTeacherInfo(id) {
+    return request({
+      url: 'edu/teacher/get/' + id,
+      method: 'get'
+    })
+  },
+  updateTeacher(params) {
+    return request({
+      url: 'edu/teacher/update',
+      method: 'put',
+      data: params
+    })
+  },
+  addTeacher(params) {
+    return request({
+      url: 'edu/teacher/addTeacher',
+      method: 'post',
+      data: params
+    })
   }
 
 }

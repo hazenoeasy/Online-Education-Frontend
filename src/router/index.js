@@ -60,7 +60,7 @@ export const constantRoutes = [
     name: 'teacher management',
     meta: { title: 'Teacher Management', icon: 'el-icon-s-help' },
     component: Layout,
-    // redirect: '/teacher/table',
+    redirect: '/teacher/list',
     children: [
       {
         path: 'list',
@@ -72,7 +72,14 @@ export const constantRoutes = [
         path: 'addTeacher',
         name: 'AddTeacher',
         component: () => import('@/views/teacher/add-teacher'),
-        meta: { title: 'Teacher List', icon: 'el-icon-s-help' }
+        meta: { title: 'Add Teacher', icon: 'el-icon-s-help' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'editTeacher',
+        component: () => import('@/views/teacher/add-teacher'),
+        meta: { title: 'Edit Teacher', icon: 'el-icon-s-help' },
+        hidden: true
       }
     ]
   },
