@@ -43,7 +43,7 @@ v-show：是否显示上传组件
           :key="imagecropperKey"
           :width="300"
           :height="300"
-          :url="BASE_API+'/eduoss/fileoss'"
+          url="edu/cos/upload"
           field="file"
           @close="close"
           @crop-upload-success="cropSuccess"
@@ -103,7 +103,7 @@ export default {
     cropSuccess(data) {
       this.imagecropperShow = false
       // 上传成功之后，关闭弹窗
-      this.teacher.avatar = data.url
+      this.teacher.avatar = data
       this.imagecropperKey = this.imagecropperKey + 1
     },
 
@@ -145,6 +145,10 @@ export default {
     },
     // 添加讲师的方法
     saveTeacher() {
+      if (this.teacher.avatar != null && typeof (this.teacher.avatar) !== 'undefined') {
+        // 取消 get请求的param
+        this.teacher.avatar = this.teacher.avatar.split('?')[0]
+      }
       teacherApi.addTeacher(this.teacher).then(Response => {
         // 添加成功
         // 提示信息

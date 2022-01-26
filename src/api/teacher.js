@@ -1,11 +1,10 @@
 import request from '@/utils/request'
 export default {
 
-  getListAll(params) {
+  getListAll() {
     return request({
       url: 'edu/teacher/getAll',
-      method: 'get',
-      params
+      method: 'get'
     })
   },
   getByPage(params) {
@@ -41,5 +40,5 @@ export default {
       data: params
     })
   }
-
+  // upload = ""
 }

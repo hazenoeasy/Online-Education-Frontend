@@ -831,6 +831,7 @@ export default {
         data: fmData
       }).then(resData => {
         that.loading = 2
+        console.log(resData.data)
         that.$emit('crop-upload-success', resData.data)
       }).catch(err => {
         if (that.value) {
